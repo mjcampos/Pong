@@ -13,3 +13,6 @@ func _physics_process(delta):
 	
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
+
+	# Update the ball's location in the Game Manager to allow the Enemy AI to move accordingly
+	GameManager.set_ball_location(position)
