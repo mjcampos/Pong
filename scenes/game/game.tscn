@@ -1,32 +1,38 @@
-[gd_scene load_steps=5 format=3 uid="uid://dte68sr1vtwr3"]
+[gd_scene load_steps=6 format=3 uid="uid://dte68sr1vtwr3"]
 
 [ext_resource type="Texture2D" uid="uid://ecl70qvg1d5m" path="res://assets/background.png" id="1_4tlf4"]
 [ext_resource type="PackedScene" uid="uid://cwg86qk5y2atk" path="res://scenes/wall/wall.tscn" id="2_h5wn1"]
 [ext_resource type="PackedScene" uid="uid://bg0pt8u6m1txq" path="res://scenes/player/player.tscn" id="3_1psbw"]
 [ext_resource type="PackedScene" uid="uid://couuqu8euouen" path="res://scenes/ball/ball.tscn" id="3_x7hd0"]
+[ext_resource type="PackedScene" uid="uid://dp6c3eg6en8g6" path="res://scenes/enemy/enemy.tscn" id="5_epn61"]
 
 [node name="Game" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(400, 300)
 texture = ExtResource("1_4tlf4")
-
-[node name="Wall" parent="." instance=ExtResource("2_h5wn1")]
-position = Vector2(400, 10)
-
-[node name="Wall2" parent="." instance=ExtResource("2_h5wn1")]
-position = Vector2(400, 590)
-
-[node name="Wall3" parent="." instance=ExtResource("2_h5wn1")]
-position = Vector2(10, 327)
-rotation = 1.5708
-
-[node name="Wall4" parent="." instance=ExtResource("2_h5wn1")]
-position = Vector2(790, 339)
-rotation = 1.5708
 
 [node name="Player" parent="." instance=ExtResource("3_1psbw")]
 position = Vector2(84, 278)
 
 [node name="Ball" parent="." instance=ExtResource("3_x7hd0")]
 position = Vector2(400, 300)
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Wall" parent="Walls" instance=ExtResource("2_h5wn1")]
+position = Vector2(400, 10)
+
+[node name="Wall2" parent="Walls" instance=ExtResource("2_h5wn1")]
+position = Vector2(400, 590)
+
+[node name="Wall3" parent="Walls" instance=ExtResource("2_h5wn1")]
+position = Vector2(10, 327)
+rotation = 1.5708
+
+[node name="Wall4" parent="Walls" instance=ExtResource("2_h5wn1")]
+position = Vector2(790, 339)
+rotation = 1.5708
+
+[node name="Enemy" parent="." instance=ExtResource("5_epn61")]
+position = Vector2(696, 290)
