@@ -8,6 +8,7 @@ var countdown: int = 3
 func _ready():
 	number.text = str(countdown)
 	number.visible = true
+	timer.start()
 
 func _on_timer_timeout():
 	countdown -= 1
