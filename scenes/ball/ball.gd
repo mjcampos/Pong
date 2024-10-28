@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var hit_sound: AudioStreamPlayer2D = $HitSound
+
 var speed = 600.0
 var starting_position: Vector2
 
@@ -14,6 +16,8 @@ func _physics_process(delta):
 		var collision: KinematicCollision2D = move_and_collide(velocity * delta)
 		
 		if collision:
+			hit_sound.position = position
+			hit_sound.play()
 			velocity = velocity.bounce(collision.get_normal())
 
 	# Update the ball's location in the Game Manager to allow the Enemy AI to move accordingly
