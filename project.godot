@@ -17,8 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://singletons/game_manager.gd"
 SignalManager="*res://singletons/signal_manager.gd"
+GameManager="*res://singletons/game_manager.gd"
+ScoreManager="*res://singletons/score_manager.gd"
 
 [display]
 
@@ -50,6 +51,7 @@ ui_down={
 2d_physics/layer_1="wall"
 2d_physics/layer_2="ball"
 2d_physics/layer_3="goal"
+2d_physics/layer_4="paddle"
 
 [rendering]
 

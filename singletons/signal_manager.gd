@@ -1,3 +1,5 @@
 extends Node
 
 signal on_countdown_complete
+signal on_score_update
+signal on_scoreboard_update

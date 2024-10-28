@@ -1,22 +1,7 @@
 extends Area2D
 
-enum GoalType {
-	PLAYER,
-	ENEMY
-}
 
-@export var goal_type: GoalType = GoalType.PLAYER
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
+@export var goal_type = GameManager.GoalType.PLAYER
 
 func _on_body_entered(body):
-	print(body)
-	print(goal_type)
+	SignalManager.on_score_update.emit(goal_type)

@@ -1,5 +1,11 @@
 extends Node
 
+
+enum GoalType {
+	PLAYER,
+	ENEMY
+}
+
 var ball_location: Vector2
 var game_started: bool = false
 
