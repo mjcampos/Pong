@@ -1,0 +1,120 @@
+[gd_scene load_steps=11 format=3 uid="uid://ibbfhne2xnem"]
+
+[ext_resource type="Texture2D" uid="uid://ecl70qvg1d5m" path="res://assets/background.png" id="1_e5bfe"]
+[ext_resource type="Theme" uid="uid://duljaui415rnk" path="res://assets/custom_theme_control.tres" id="1_ndcqa"]
+[ext_resource type="FontFile" uid="uid://cncs75jep76dh" path="res://assets/fonts/PixeloidSansBold-PKnYd.ttf" id="2_qj0hw"]
+[ext_resource type="FontFile" uid="uid://gmqjlwnmey56" path="res://assets/fonts/PixeloidSans-mLxMm.ttf" id="4_l5ogi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lp0jk"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cw8rp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu8np"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7yp6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o2lqn"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btmow"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ndcqa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(400, 300)
+texture = ExtResource("1_e5bfe")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -177.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_qj0hw")
+theme_override_font_sizes/font_size = 80
+text = "Pong"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -44.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_l5ogi")
+theme_override_font_sizes/font_size = 20
+text = "Recreated By Michael Campos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 5.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_l5ogi")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_lp0jk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_cw8rp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_fu8np")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w7yp6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o2lqn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_btmow")
+text = "Play"
+
+[node name="HelpButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 87.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_l5ogi")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_lp0jk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_cw8rp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_fu8np")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w7yp6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o2lqn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_btmow")
+text = "Help"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="HelpButton" to="." method="_on_help_button_pressed"]

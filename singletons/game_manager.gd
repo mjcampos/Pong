@@ -1,6 +1,5 @@
 extends Node
 
-
 enum GoalType {
 	PLAYER,
 	ENEMY

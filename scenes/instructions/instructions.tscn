@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://7sqkmk21mnxv"]
+
+[ext_resource type="Theme" uid="uid://duljaui415rnk" path="res://assets/custom_theme_control.tres" id="1_7w3bj"]
+[ext_resource type="Texture2D" uid="uid://ecl70qvg1d5m" path="res://assets/background.png" id="1_cnpl0"]
+[ext_resource type="FontFile" uid="uid://c3s75y2wbgr66" path="res://assets/fonts/PixeloidMono-d94EV.ttf" id="2_jw5hi"]
+[ext_resource type="Script" path="res://scenes/instructions/instructions.gd" id="2_xupxx"]
+[ext_resource type="FontFile" uid="uid://gmqjlwnmey56" path="res://assets/fonts/PixeloidSans-mLxMm.ttf" id="4_1eil7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_87d3b"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mkpid"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3lx4o"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exh01"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mrs8f"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqohb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_7w3bj")
+script = ExtResource("2_xupxx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(400, 300)
+texture = ExtResource("1_cnpl0")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_jw5hi")
+theme_override_font_sizes/font_size = 22
+text = "You are the player on the left. 
+
+Press the Up Arrow or W key to move up.
+
+Press the Down Arrow or S key to move down.
+
+The first to score 3 points wins."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 80.0
+offset_bottom = 47.0
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_1eil7")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_87d3b")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_mkpid")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_3lx4o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_exh01")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mrs8f")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hqohb")
+text = "Back"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
