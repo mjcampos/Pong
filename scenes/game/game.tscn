@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dte68sr1vtwr3"]
+[gd_scene load_steps=9 format=3 uid="uid://dte68sr1vtwr3"]
 
 [ext_resource type="Texture2D" uid="uid://ecl70qvg1d5m" path="res://assets/background.png" id="1_4tlf4"]
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_i4xgb"]
@@ -6,6 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://bg0pt8u6m1txq" path="res://scenes/player/player.tscn" id="3_1psbw"]
 [ext_resource type="PackedScene" uid="uid://couuqu8euouen" path="res://scenes/ball/ball.tscn" id="3_x7hd0"]
 [ext_resource type="PackedScene" uid="uid://dp6c3eg6en8g6" path="res://scenes/enemy/enemy.tscn" id="5_epn61"]
+[ext_resource type="FontFile" uid="uid://cncs75jep76dh" path="res://assets/fonts/PixeloidSansBold-PKnYd.ttf" id="7_p4qm4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wd7xm"]
+font = ExtResource("7_p4qm4")
+font_size = 96
+font_color = Color(1, 0.176471, 0, 1)
+outline_size = 6
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_i4xgb")
@@ -42,5 +49,16 @@ position = Vector2(696, 290)
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Number" type="Label" parent="CanvasLayer"]
+offset_left = 378.0
+offset_top = 129.0
+offset_right = 434.0
+offset_bottom = 217.0
+label_settings = SubResource("LabelSettings_wd7xm")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
