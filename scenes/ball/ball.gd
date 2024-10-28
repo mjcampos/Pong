@@ -9,10 +9,11 @@ func _ready():
 	velocity = Vector2(cos(random_angle), sin(random_angle)) * speed
 
 func _physics_process(delta):
-	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
-	
-	if collision:
-		velocity = velocity.bounce(collision.get_normal())
+	if GameManager.get_game_started():
+		var collision: KinematicCollision2D = move_and_collide(velocity * delta)
+		
+		if collision:
+			velocity = velocity.bounce(collision.get_normal())
 
 	# Update the ball's location in the Game Manager to allow the Enemy AI to move accordingly
 	GameManager.set_ball_location(position)
