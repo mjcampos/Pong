@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dte68sr1vtwr3"]
+[gd_scene load_steps=10 format=3 uid="uid://dte68sr1vtwr3"]
 
 [ext_resource type="Texture2D" uid="uid://ecl70qvg1d5m" path="res://assets/background.png" id="1_4tlf4"]
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_i4xgb"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://couuqu8euouen" path="res://scenes/ball/ball.tscn" id="3_x7hd0"]
 [ext_resource type="PackedScene" uid="uid://dp6c3eg6en8g6" path="res://scenes/enemy/enemy.tscn" id="5_epn61"]
 [ext_resource type="FontFile" uid="uid://cncs75jep76dh" path="res://assets/fonts/PixeloidSansBold-PKnYd.ttf" id="7_p4qm4"]
+[ext_resource type="PackedScene" uid="uid://bd3oe730t0da" path="res://scenes/goal/goal.tscn" id="8_im0te"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wd7xm"]
 font = ExtResource("7_p4qm4")
@@ -33,15 +34,7 @@ position = Vector2(400, 300)
 position = Vector2(400, 10)
 
 [node name="Wall2" parent="Walls" instance=ExtResource("2_h5wn1")]
-position = Vector2(400, 590)
-
-[node name="Wall3" parent="Walls" instance=ExtResource("2_h5wn1")]
-position = Vector2(10, 327)
-rotation = 1.5708
-
-[node name="Wall4" parent="Walls" instance=ExtResource("2_h5wn1")]
-position = Vector2(790, 339)
-rotation = 1.5708
+position = Vector2(401, 590)
 
 [node name="Enemy" parent="." instance=ExtResource("5_epn61")]
 position = Vector2(696, 290)
@@ -54,11 +47,20 @@ autostart = true
 
 [node name="Number" type="Label" parent="CanvasLayer"]
 offset_left = 378.0
-offset_top = 129.0
+offset_top = 127.0
 offset_right = 434.0
-offset_bottom = 217.0
+offset_bottom = 245.0
 label_settings = SubResource("LabelSettings_wd7xm")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Goals" type="Node2D" parent="."]
+
+[node name="Goal" parent="Goals" instance=ExtResource("8_im0te")]
+position = Vector2(-10, 300)
+
+[node name="Goal2" parent="Goals" instance=ExtResource("8_im0te")]
+position = Vector2(810, 300)
+goal_type = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
