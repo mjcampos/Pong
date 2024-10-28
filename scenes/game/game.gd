@@ -38,6 +38,7 @@ func default_label_settings():
 func start_countdown():
 	countdown = 3
 	number_label.text = str(countdown)
+	number_label.visible = true
 	timer.start()
 
 func _on_timer_timeout():
