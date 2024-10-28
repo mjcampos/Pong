@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dte68sr1vtwr3"]
+[gd_scene load_steps=13 format=3 uid="uid://dte68sr1vtwr3"]
 
 [ext_resource type="Texture2D" uid="uid://ecl70qvg1d5m" path="res://assets/background.png" id="1_4tlf4"]
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_i4xgb"]
@@ -8,10 +8,17 @@
 [ext_resource type="PackedScene" uid="uid://dp6c3eg6en8g6" path="res://scenes/enemy/enemy.tscn" id="5_epn61"]
 [ext_resource type="FontFile" uid="uid://cncs75jep76dh" path="res://assets/fonts/PixeloidSansBold-PKnYd.ttf" id="7_p4qm4"]
 [ext_resource type="PackedScene" uid="uid://bd3oe730t0da" path="res://scenes/goal/goal.tscn" id="8_im0te"]
+[ext_resource type="FontFile" uid="uid://c3s75y2wbgr66" path="res://assets/fonts/PixeloidMono-d94EV.ttf" id="8_lxwpm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wd7xm"]
 font = ExtResource("7_p4qm4")
-font_size = 96
+font_size = 90
+font_color = Color(1, 0.176471, 0, 1)
+outline_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_6jpym"]
+font = ExtResource("8_lxwpm")
+font_size = 60
 font_color = Color(1, 0.176471, 0, 1)
 outline_size = 6
 
@@ -60,11 +67,46 @@ label_settings = SubResource("LabelSettings_wd7xm")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Winner" type="Label" parent="CanvasLayer"]
+z_index = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -223.0
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+text = "Player Wins!!!"
+label_settings = SubResource("LabelSettings_wd7xm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Instructions" type="Label" parent="CanvasLayer"]
+z_index = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 2.0
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+text = "Press R To Reset
+Press Esc for main menu"
+label_settings = SubResource("LabelSettings_6jpym")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="PlayerScore" type="Label" parent="CanvasLayer"]
 offset_left = 300.0
 offset_top = 50.0
 offset_right = 350.0
 offset_bottom = 129.0
+text = "0"
 label_settings = SubResource("LabelSettings_bycnt")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -74,6 +116,7 @@ offset_left = 450.0
 offset_top = 50.0
 offset_right = 500.0
 offset_bottom = 129.0
+text = "0"
 label_settings = SubResource("LabelSettings_bycnt")
 horizontal_alignment = 1
 vertical_alignment = 1
