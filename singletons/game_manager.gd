@@ -1,5 +1,9 @@
 extends Node
 
+const MAIN: PackedScene = preload("res://scenes/main/main.tscn")
+const GAME: PackedScene = preload("res://scenes/game/game.tscn")
+const INSTRUCTIONS: PackedScene = preload("res://scenes/instructions/instructions.tscn")
+
 enum GoalType {
 	PLAYER,
 	ENEMY
@@ -38,4 +42,10 @@ func reset_scene():
 	get_tree().reload_current_scene()
 
 func go_to_main():
-	pass
+	get_tree().change_scene_to_packed(MAIN)
+	
+func go_to_game():
+	get_tree().change_scene_to_packed(GAME)
+
+func go_to_help():
+	get_tree().change_scene_to_packed(INSTRUCTIONS)

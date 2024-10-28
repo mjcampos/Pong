@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://ibbfhne2xnem"]
+[gd_scene load_steps=12 format=3 uid="uid://ibbfhne2xnem"]
 
 [ext_resource type="Texture2D" uid="uid://ecl70qvg1d5m" path="res://assets/background.png" id="1_e5bfe"]
 [ext_resource type="Theme" uid="uid://duljaui415rnk" path="res://assets/custom_theme_control.tres" id="1_ndcqa"]
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_yd7h3"]
 [ext_resource type="FontFile" uid="uid://cncs75jep76dh" path="res://assets/fonts/PixeloidSansBold-PKnYd.ttf" id="2_qj0hw"]
 [ext_resource type="FontFile" uid="uid://gmqjlwnmey56" path="res://assets/fonts/PixeloidSans-mLxMm.ttf" id="4_l5ogi"]
 
@@ -31,6 +32,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ndcqa")
+script = ExtResource("1_yd7h3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(400, 300)

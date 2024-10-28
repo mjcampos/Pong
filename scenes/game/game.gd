@@ -23,7 +23,7 @@ func _process(_delta):
 			GameManager.reset_scene()
 		
 		if Input.is_action_just_pressed("exit"):
-			pass
+			GameManager.go_to_main()
 
 func default_label_settings():
 	# Set scoreboards to 0
